@@ -36,36 +36,36 @@ public class TestSteps {
     }
 
     @When("^въведе валидна потребителска парола: \"([^\"]*)\"$")
-    public void въведе_валидна_потребителска_парола(String password) throws Throwable {
+    public void InputPassowrd(String password) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         registerModel.setPassword(password);
     }
 
     @When("^Въведе elektronna poshta : \"([^\"]*)\"$")
-    public void въведе_elektronna_poshta(String email) throws Throwable {
+    public void InputEmail(String email) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
        registerModel.setEmail(email);
     }
 
     @When("^Въведе telefonen nomer : \"([^\"]*)\"$")
-    public void въведе_telefonen_nomer(String number) throws Throwable {
+    public void InputNumber(String number) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         registerModel.setNumber(number);
     }
 
     @When("^Въведе studentsko id : \"([^\"]*)\"$")
-    public void въведе_studentsko_id(String studentid) throws Throwable {
+    public void InputStudentID(String studentid) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
        registerModel.setStudentID(Double.parseDouble(studentid));
     }
 
     @When("^натисне бутона за вход в системата$")
-    public void натисне_бутона_за_вход_в_системата() throws Throwable {
+    public void PressRegisterButton() throws Throwable {
         registerModel.clickRegisterButton();
     }
 
     @Then("^Вижда съобщение за: \"([^\"]*)\"\\.$")
-    public void вижда_съобщение_за(String expectedMessage) throws Throwable {
+    public void SeeMessage(String expectedMessage) throws Throwable {
       //  registerModel.getMessage().equals(message);
         assertEquals(expectedMessage,registerModel.getMessage());
     }
@@ -76,23 +76,23 @@ public class TestSteps {
     }
 
     @When("^въведе валидна ocenka: \"([^\"]*)\"$")
-    public void въведе_валидна_ocenka(String arg1) throws Throwable {
+    public void InputGrade(String arg1) throws Throwable {
         diaryModel.setMark(Integer.parseInt(arg1));
     }
 
     @When("^Въведе валидно студенско ид име: \"([^\"]*)\"$")
-    public void въведе_валидно_студенско_ид_име(String arg1) throws Throwable {
+    public void InputStudentIDValid(String arg1) throws Throwable {
         diaryModel.setStudentID(Double.parseDouble(arg1));
     }
     @When("^натисне бутона за вход в системата ocenka$")
-    public void натисне_бутона_за_вход_в_системата_ocenka() throws Throwable {
+    public void PressLoginButton() throws Throwable {
         diaryModel.Input();
     }
 
 
 
     @Then("^Вижда съобщение за ocenka: \"([^\"]*)\"\\.$")
-    public void вижда_съобщение_за_ocenka(String arg1) throws Throwable {
+    public void SeetMessage(String arg1) throws Throwable {
         assertEquals(diaryModel.getMessage(),arg1);
     }
 
@@ -103,17 +103,17 @@ public class TestSteps {
     }
 
     @When("^Въведе валидно потребителско име: \"([^\"]*)\" za check$")
-    public void въведе_валидно_потребителско_име_za_check(String username) throws Throwable {
+    public void InputValidUsername(String username) throws Throwable {
      checkGradeModel.getParent().setUsername(username);
     }
 
     @When("^въведе валидна потребителска парола: \"([^\"]*)\" za check$")
-    public void въведе_валидна_потребителска_парола_za_check(String password) throws Throwable {
+    public void InputValidPassowrd(String password) throws Throwable {
         checkGradeModel.getParent().setPassowrd(password);
     }
 
     @When("^Въведе telefonen nomer : \"([^\"]*)\" za check$")
-    public void въведе_telefonen_nomer_za_check(String numer) throws Throwable {
+    public void InputTelefoneNumber(String numer) throws Throwable {
 
         checkGradeModel.getParent().setNumber(numer);
     }

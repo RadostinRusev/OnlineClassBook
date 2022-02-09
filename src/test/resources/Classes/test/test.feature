@@ -1,4 +1,4 @@
-Feature: Вход в системата
+Feature: Example tests
 // vpisvane na ocenki
   // proverka na ocenka student
   //proverka na ocenka roditel

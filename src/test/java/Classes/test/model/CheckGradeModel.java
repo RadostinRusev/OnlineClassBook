@@ -2,6 +2,7 @@ package Classes.test.model;
 
 import Classes.models.Class;
 import Classes.models.Parent;
+import Classes.sevice.CheckGradeService;
 import Classes.sevice.DiaryService;
 
 public class CheckGradeModel {
@@ -38,6 +39,6 @@ public class CheckGradeModel {
 
     public void Checkgrade(){
         DiaryService diaryService = new DiaryService();
-        message= diaryService.Check(parent,classes);
+        message= CheckGradeService.Check(parent,classes);
     }
 }

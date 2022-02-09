@@ -25,13 +25,5 @@ public class DiaryService {
         return "success";
     }
 
-    public static String Check(Parent parent, Class sas) {
-Double studentID= parent.getStudentID();
-grades= sas.getGrades();
-        if(grades.get(studentID)!=null){
-            return "success";
-        }
 
-        return "failed";
-    }
 }
