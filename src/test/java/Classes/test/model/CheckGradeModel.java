@@ -4,12 +4,19 @@ import Classes.models.Class;
 import Classes.models.Parent;
 import Classes.sevice.CheckGradeService;
 import Classes.sevice.DiaryService;
+import cucumber.api.java.cs.A;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CheckGradeModel {
 
     private static Parent parent = new Parent();
 
     private static Class classes = new Class();
+
+    private static ArrayList<Integer> grade = new ArrayList();
 
     String message;
 
@@ -41,4 +48,10 @@ public class CheckGradeModel {
         DiaryService diaryService = new DiaryService();
         message= CheckGradeService.Check(parent,classes);
     }
+    public List<Integer> IntegerToList(Integer e){
+        grade= new ArrayList<>();
+        grade.add(e);
+        return grade;
+    }
+
 }

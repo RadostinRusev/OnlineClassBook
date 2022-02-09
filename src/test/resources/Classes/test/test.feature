@@ -39,6 +39,8 @@ Feature: Example tests
       | 12221 | 11 | invalid mark |
 
 
+
+
   Scenario: Roditel proverqva ocenka
     Given Open Check screen
     When  Въведе валидно потребителско име: "Иван" za check
@@ -58,3 +60,5 @@ Feature: Example tests
     And Mockvane na ocenka : "12222d" , "5"
     And натисне бутона за вход в системата za check
     Then Вижда съобщение за: "failed". za check
+
+

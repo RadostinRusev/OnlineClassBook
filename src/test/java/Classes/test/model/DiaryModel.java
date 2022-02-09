@@ -3,27 +3,22 @@ package Classes.test.model;
 import Classes.models.Student;
 import Classes.sevice.DiaryService;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class DiaryModel {
 
-    int mark;
+    int grade;
     double studentID;
     String message;
 
 
     public void  Input(){
-   message= DiaryService.Put(this.mark,this.studentID);
+   message= DiaryService.Put(this.grade,this.studentID);
     }
 
-    public int getMark() {
-        return mark;
-    }
 
-    public void setMark(int mark) {
-        this.mark = mark;
-    }
 
     public double getStudentID() {
         return studentID;
@@ -39,6 +34,15 @@ public class DiaryModel {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 }
 

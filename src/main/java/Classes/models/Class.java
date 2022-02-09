@@ -31,11 +31,11 @@ public class Class {
         this.teacher = teacher;
     }
 
-    public HashMap<Double, Integer> getGrades() {
+    public HashMap<Double, List<Integer>> getGrades() {
         return grades;
     }
 
-    public void setGrades(HashMap<Double, Integer> grades) {
+    public void setGrades(HashMap<Double, List<Integer>> grades) {
         this.grades = grades;
     }
 
@@ -56,7 +56,7 @@ public class Class {
     /**
      * 
      */
-    public HashMap<Double,Integer> grades;
+    public HashMap<Double,List<Integer>> grades;
 
     /**
      * 
@@ -80,7 +80,7 @@ public class Class {
      * @param studentID 
      * @return
      */
-    public int getGrade(double studentID) {
+    public List<Integer> getGrade(double studentID) {
 
         return grades.get(studentID);
     }
@@ -90,10 +90,14 @@ public class Class {
      * @param grade 
      * @return
      */
-    public void setGrade(double studentID, int grade) {
-if(grades==null){
+
+    public void setGrade(double studentID, List<Integer> grade) {
+
+if(getGrades()==null){
     grades = new HashMap<>();
 }
+
+
        grades.put(studentID,grade);
     }
 
@@ -129,5 +133,6 @@ if(grades==null){
 
         subject.subjectName=subjectName;
     }
+
 
 }

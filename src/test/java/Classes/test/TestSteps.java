@@ -77,7 +77,7 @@ public class TestSteps {
 
     @When("^въведе валидна ocenka: \"([^\"]*)\"$")
     public void InputGrade(String arg1) throws Throwable {
-        diaryModel.setMark(Integer.parseInt(arg1));
+        diaryModel.setGrade(Integer.parseInt(arg1));
     }
 
     @When("^Въведе валидно студенско ид име: \"([^\"]*)\"$")
@@ -125,7 +125,10 @@ public class TestSteps {
 
     @When("^Mockvane na ocenka : \"([^\"]*)\" , \"([^\"]*)\"$")
     public void mockvane_na_ocenka(String studentID, String grade) throws Throwable {
-        checkGradeModel.getClasses().setGrade(Double.parseDouble(studentID),Integer.parseInt(grade));
+
+
+        checkGradeModel.getClasses().setGrade(Double.parseDouble(studentID),checkGradeModel.IntegerToList(Integer.parseInt(grade)));
+
     }
 
 
@@ -140,6 +143,8 @@ public class TestSteps {
     public void вижда_съобщение_за_za_check(String arg1) throws Throwable {
        assertEquals(checkGradeModel.getMessage(),arg1);
     }
+
+
 
 
 }
