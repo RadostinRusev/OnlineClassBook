@@ -16,9 +16,17 @@ public class CheckGradeModel {
 
     private static Class classes = new Class();
 
-    private static ArrayList<Integer> grade = new ArrayList();
+    private static String grade;
 
     String message;
+
+    public static String getGrade() {
+        return grade;
+    }
+
+    public static void setGrade(String grade) {
+        CheckGradeModel.grade = grade;
+    }
 
     public String getMessage() {
         return message;
@@ -46,12 +54,11 @@ public class CheckGradeModel {
 
     public void Checkgrade(){
         DiaryService diaryService = new DiaryService();
-        message= CheckGradeService.Check(parent,classes);
+        message= CheckGradeService.Check(parent,classes,grade);
     }
-    public List<Integer> IntegerToList(Integer e){
-        grade= new ArrayList<>();
+   /* public List<Integer> IntegerToList(Integer e){
         grade.add(e);
         return grade;
-    }
+    }*/
 
 }

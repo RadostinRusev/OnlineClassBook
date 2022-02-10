@@ -127,8 +127,8 @@ public class TestSteps {
     public void mockvane_na_ocenka(String studentID, String grade) throws Throwable {
 
 
-        checkGradeModel.getClasses().setGrade(Double.parseDouble(studentID),checkGradeModel.IntegerToList(Integer.parseInt(grade)));
-
+        checkGradeModel.getClasses().setGrade(Double.parseDouble(studentID),Collections.emptyList());
+        checkGradeModel.setGrade(grade);
     }
 
 
@@ -138,7 +138,6 @@ public class TestSteps {
         // Write code here that turns the phrase above into concrete actions
         checkGradeModel.Checkgrade();
     }
-
     @Then("^Вижда съобщение за: \"([^\"]*)\"\\. za check$")
     public void вижда_съобщение_за_za_check(String arg1) throws Throwable {
        assertEquals(checkGradeModel.getMessage(),arg1);

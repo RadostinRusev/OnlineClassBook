@@ -1,10 +1,4 @@
 Feature: Example tests
-// vpisvane na ocenki
-  // proverka na ocenka student
-  //proverka na ocenka roditel
- //suzdavane na roditel
-  // suzdavane na uchitel
-  //Background:
 
   Scenario: Registrirane na roditel
     Given Open Parent register screen
@@ -36,29 +30,35 @@ Feature: Example tests
       | studentID | mark | message |
       | 12222 | 6 | success |
     | 12221 | 6 | invalid studentID |
-      | 12221 | 11 | invalid mark |
+      | 12222 | 11 | invalid mark |
 
 
 
 
-  Scenario: Roditel proverqva ocenka
+  Scenario Outline: Roditel proverqva ocenka
     Given Open Check screen
-    When  Въведе валидно потребителско име: "Иван" za check
-    And въведе валидна потребителска парола: "parola" za check
-    And Въведе telefonen nomer : "0222588888" za check
-    And Въведе studentsko id : "12222d" za check
-    And Mockvane na ocenka : "12222d" , "5"
+    When  Въведе валидно потребителско име: "<username>" za check
+    And въведе валидна потребителска парола: "<password>" za check
+    And Въведе telefonen nomer : "<number>" za check
+    And Въведе studentsko id : "<studentID>" za check
+    And Mockvane na ocenka : "<studentID2>" , "<gradeList>"
     And натисне бутона за вход в системата za check
-    Then Вижда съобщение за: "success". za check
+    Then Вижда съобщение за: "<message>". za check
 
-  Scenario: Roditel proverqva ocenka failed
-    Given Open Check screen
-    When  Въведе валидно потребителско име: "Иван" za check
-    And въведе валидна потребителска парола: "parola" za check
-    And Въведе telefonen nomer : "0222588888" za check
-    And Въведе studentsko id : "12232d" za check
-    And Mockvane na ocenka : "12222d" , "5"
-    And натисне бутона за вход в системата za check
-    Then Вижда съобщение за: "failed". za check
+    Examples:
+      |username | password | number | studentID | studentID2| gradeList |message|
+      |Иван | parola | 0882288212 | 12222 | 12222| 3,5,5,5,5,5,5 |success|
+      |Иван | parola | 0882288212 | 12222 | 12222| 3,5,5,5,5,5,5,6,6,6,6,6,6|too much grades|
+
+  #Scenario: Roditel proverqva ocenka failed
+   # Given Open Check screen
+   # When  Въведе валидно потребителско име: "Иван" za check
+   # And въведе валидна потребителска парола: "parola" za check
+   # And Въведе telefonen nomer : "0222588888" za check
+   # And Въведе studentsko id : "12232d" za check
+   # And Mockvane na ocenka : "12222d" , "5"
+  # And натисне бутона за вход в системата za check
+   # Then Вижда съобщение за: "failed". za check
 
 
+    #
